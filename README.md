@@ -1,6 +1,6 @@
 # OBJE Podcast Player
 
-Contributors: mipallab123  
+Contributors: Majadul Islam Pallab 
 Tags: podcast, audio, player, elementor, elementor widget, spotify, sticky player  
 Requires at least: 5.8  
 Tested up to: 6.6  
