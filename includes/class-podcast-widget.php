@@ -10,7 +10,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Podcast Player', 'obje-podcast' );
+		return esc_html__( 'Podcast Player', 'obje-podcast-player' );
 	}
 
 	public function get_icon() {
@@ -33,7 +33,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Content', 'obje-podcast' ),
+				'label' => esc_html__( 'Content', 'obje-podcast-player' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -41,12 +41,12 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'podcast_type',
 			[
-				'label' => esc_html__( 'Type', 'obje-podcast' ),
+				'label' => esc_html__( 'Type', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'audio',
 				'options' => [
-					'audio' => esc_html__( 'Audio Player', 'obje-podcast' ),
-					'external' => esc_html__( 'External Link', 'obje-podcast' ),
+					'audio' => esc_html__( 'Audio Player', 'obje-podcast-player' ),
+					'external' => esc_html__( 'External Link', 'obje-podcast-player' ),
 				],
 			]
 		);
@@ -54,52 +54,52 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'podcast_title',
 			[
-				'label' => esc_html__( 'Title', 'obje-podcast' ),
+				'label' => esc_html__( 'Title', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'Why Sales Training Fails Without Competency Diagnosis', 'obje-podcast' ),
+				'default' => esc_html__( 'Why Sales Training Fails Without Competency Diagnosis', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'podcast_author',
 			[
-				'label' => esc_html__( 'Source / Author', 'obje-podcast' ),
+				'label' => esc_html__( 'Source / Author', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Sales Enablement PRO', 'obje-podcast' ),
+				'default' => esc_html__( 'Sales Enablement PRO', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'podcast_date',
 			[
-				'label' => esc_html__( 'Date', 'obje-podcast' ),
+				'label' => esc_html__( 'Date', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Oct 12, 2025', 'obje-podcast' ),
+				'default' => esc_html__( 'Oct 12, 2025', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'podcast_duration',
 			[
-				'label' => esc_html__( 'Duration', 'obje-podcast' ),
+				'label' => esc_html__( 'Duration', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( '45m', 'obje-podcast' ),
+				'default' => esc_html__( '45m', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'badge_text',
 			[
-				'label' => esc_html__( 'Badge Text', 'obje-podcast' ),
+				'label' => esc_html__( 'Badge Text', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Audio', 'obje-podcast' ),
+				'default' => esc_html__( 'Audio', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'audio_file',
 			[
-				'label' => esc_html__( 'Audio File', 'obje-podcast' ),
+				'label' => esc_html__( 'Audio File', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'media_types' => [ 'audio' ],
 				'condition' => [
@@ -111,9 +111,9 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'external_link',
 			[
-				'label' => esc_html__( 'External Link', 'obje-podcast' ),
+				'label' => esc_html__( 'External Link', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'obje-podcast' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'obje-podcast-player' ),
 				'show_external' => true,
 				'default' => [
 					'url' => '',
@@ -129,9 +129,9 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'listen_btn_text',
 			[
-				'label' => esc_html__( 'Button Text', 'obje-podcast' ),
+				'label' => esc_html__( 'Button Text', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'Listen now', 'obje-podcast' ),
+				'default' => esc_html__( 'Listen now', 'obje-podcast-player' ),
 				'condition' => [
 					'podcast_type' => 'external',
 				],
@@ -141,18 +141,18 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'left_icon',
 			[
-				'label' => esc_html__( 'Custom Left Icon', 'obje-podcast' ),
+				'label' => esc_html__( 'Custom Left Icon', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
-				'description' => esc_html__( 'Leave empty to use default SVG', 'obje-podcast' ),
+				'description' => esc_html__( 'Leave empty to use default SVG', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'play_icon',
 			[
-				'label' => esc_html__( 'Play Icon', 'obje-podcast' ),
+				'label' => esc_html__( 'Play Icon', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
-				'description' => esc_html__( 'Leave empty to use default SVG', 'obje-podcast' ),
+				'description' => esc_html__( 'Leave empty to use default SVG', 'obje-podcast-player' ),
 				'condition' => [
 					'podcast_type' => 'audio',
 				],
@@ -162,9 +162,9 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'pause_icon',
 			[
-				'label' => esc_html__( 'Pause Icon', 'obje-podcast' ),
+				'label' => esc_html__( 'Pause Icon', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
-				'description' => esc_html__( 'Leave empty to use default SVG', 'obje-podcast' ),
+				'description' => esc_html__( 'Leave empty to use default SVG', 'obje-podcast-player' ),
 				'condition' => [
 					'podcast_type' => 'audio',
 				],
@@ -179,7 +179,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'style_card_section',
 			[
-				'label' => esc_html__( 'Card Box', 'obje-podcast' ),
+				'label' => esc_html__( 'Card Box', 'obje-podcast-player' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -187,7 +187,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'card_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Background Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-card' => 'background-color: {{VALUE}};',
@@ -206,7 +206,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'card_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'obje-podcast' ),
+				'label' => esc_html__( 'Border Radius', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -226,7 +226,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'card_padding',
 			[
-				'label' => esc_html__( 'Padding', 'obje-podcast' ),
+				'label' => esc_html__( 'Padding', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -238,7 +238,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'card_margin',
 			[
-				'label' => esc_html__( 'Margin', 'obje-podcast' ),
+				'label' => esc_html__( 'Margin', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -250,7 +250,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'card_gap',
 			[
-				'label' => esc_html__( 'Gap', 'obje-podcast' ),
+				'label' => esc_html__( 'Gap', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'selectors' => [
@@ -267,7 +267,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'style_typography_section',
 			[
-				'label' => esc_html__( 'Content Styles', 'obje-podcast' ),
+				'label' => esc_html__( 'Content Styles', 'obje-podcast-player' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -275,7 +275,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => esc_html__( 'Title Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Title Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-title' => 'color: {{VALUE}};',
@@ -287,7 +287,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'title_typography',
-				'label' => esc_html__( 'Title Typography', 'obje-podcast' ),
+				'label' => esc_html__( 'Title Typography', 'obje-podcast-player' ),
 				'selector' => '{{WRAPPER}} .obje-podcast-title',
 			]
 		);
@@ -295,7 +295,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'author_color',
 			[
-				'label' => esc_html__( 'Source/Author Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Source/Author Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
@@ -308,7 +308,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'author_typography',
-				'label' => esc_html__( 'Source/Author Typography', 'obje-podcast' ),
+				'label' => esc_html__( 'Source/Author Typography', 'obje-podcast-player' ),
 				'selector' => '{{WRAPPER}} .obje-podcast-source',
 			]
 		);
@@ -316,7 +316,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'meta_color',
 			[
-				'label' => esc_html__( 'Meta Color (Date & Time)', 'obje-podcast' ),
+				'label' => esc_html__( 'Meta Color (Date & Time)', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
@@ -329,7 +329,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'meta_typography',
-				'label' => esc_html__( 'Meta Typography', 'obje-podcast' ),
+				'label' => esc_html__( 'Meta Typography', 'obje-podcast-player' ),
 				'selector' => '{{WRAPPER}} .obje-podcast-meta-text',
 			]
 		);
@@ -342,7 +342,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'style_icons_section',
 			[
-				'label' => esc_html__( 'Icons', 'obje-podcast' ),
+				'label' => esc_html__( 'Icons', 'obje-podcast-player' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -350,7 +350,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'left_icon_heading',
 			[
-				'label' => esc_html__( 'Custom Left Icon', 'obje-podcast' ),
+				'label' => esc_html__( 'Custom Left Icon', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 			]
 		);
@@ -358,7 +358,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'left_icon_color',
 			[
-				'label' => esc_html__( 'Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-icon-wrap' => 'color: {{VALUE}};',
@@ -372,7 +372,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'left_icon_size',
 			[
-				'label' => esc_html__( 'Size', 'obje-podcast' ),
+				'label' => esc_html__( 'Size', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'selectors' => [
@@ -384,7 +384,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'left_icon_column_width',
 			[
-				'label' => esc_html__( 'Column Width (Spacing)', 'obje-podcast' ),
+				'label' => esc_html__( 'Column Width (Spacing)', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem' ],
 				'selectors' => [
@@ -396,7 +396,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'action_icon_heading',
 			[
-				'label' => esc_html__( 'Play / Pause Icon', 'obje-podcast' ),
+				'label' => esc_html__( 'Play / Pause Icon', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -408,14 +408,14 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_tab(
 			'tab_action_icon_normal',
 			[
-				'label' => esc_html__( 'Normal', 'obje-podcast' ),
+				'label' => esc_html__( 'Normal', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'action_icon_color',
 			[
-				'label' => esc_html__( 'Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-play-btn svg' => 'fill: {{VALUE}};',
@@ -427,7 +427,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'action_icon_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Background Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-play-btn' => 'background-color: {{VALUE}};',
@@ -449,14 +449,14 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_tab(
 			'tab_action_icon_hover',
 			[
-				'label' => esc_html__( 'Hover', 'obje-podcast' ),
+				'label' => esc_html__( 'Hover', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'action_icon_color_hover',
 			[
-				'label' => esc_html__( 'Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-play-btn:hover' => 'color: {{VALUE}} !important;',
@@ -469,7 +469,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'action_icon_bg_color_hover',
 			[
-				'label' => esc_html__( 'Background Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Background Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-play-btn:hover' => 'background-color: {{VALUE}} !important;',
@@ -492,7 +492,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'action_icon_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'obje-podcast' ),
+				'label' => esc_html__( 'Border Radius', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -504,7 +504,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'action_icon_padding',
 			[
-				'label' => esc_html__( 'Padding', 'obje-podcast' ),
+				'label' => esc_html__( 'Padding', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -516,7 +516,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'action_icon_size',
 			[
-				'label' => esc_html__( 'Size', 'obje-podcast' ),
+				'label' => esc_html__( 'Size', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'selectors' => [
@@ -533,7 +533,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'style_badge_section',
 			[
-				'label' => esc_html__( 'Badge', 'obje-podcast' ),
+				'label' => esc_html__( 'Badge', 'obje-podcast-player' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -541,7 +541,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'badge_color',
 			[
-				'label' => esc_html__( 'Text Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Text Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-badge' => 'color: {{VALUE}};',
@@ -552,7 +552,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'badge_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Background Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-badge' => 'background-color: {{VALUE}};',
@@ -571,7 +571,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'badge_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'obje-podcast' ),
+				'label' => esc_html__( 'Border Radius', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -583,7 +583,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'badge_padding',
 			[
-				'label' => esc_html__( 'Padding', 'obje-podcast' ),
+				'label' => esc_html__( 'Padding', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -608,7 +608,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'style_button_section',
 			[
-				'label' => esc_html__( 'Listen Button (External Link)', 'obje-podcast' ),
+				'label' => esc_html__( 'Listen Button (External Link)', 'obje-podcast-player' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -617,7 +617,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'btn_typography',
-				'label' => esc_html__( 'Typography', 'obje-podcast' ),
+				'label' => esc_html__( 'Typography', 'obje-podcast-player' ),
 				'selector' => '{{WRAPPER}} .obje-podcast-listen-btn',
 			]
 		);
@@ -628,14 +628,14 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => esc_html__( 'Normal', 'obje-podcast' ),
+				'label' => esc_html__( 'Normal', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'btn_text_color',
 			[
-				'label' => esc_html__( 'Text/Icon Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Text/Icon Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-listen-btn' => 'color: {{VALUE}};',
@@ -647,7 +647,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'btn_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Background Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-listen-btn' => 'background-color: {{VALUE}};',
@@ -669,14 +669,14 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => esc_html__( 'Hover', 'obje-podcast' ),
+				'label' => esc_html__( 'Hover', 'obje-podcast-player' ),
 			]
 		);
 
 		$this->add_control(
 			'btn_text_color_hover',
 			[
-				'label' => esc_html__( 'Text/Icon Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Text/Icon Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-listen-btn:hover' => 'color: {{VALUE}} !important;',
@@ -688,7 +688,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'btn_bg_color_hover',
 			[
-				'label' => esc_html__( 'Background Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Background Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .obje-podcast-listen-btn:hover' => 'background-color: {{VALUE}} !important;',
@@ -711,7 +711,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'btn_border_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'obje-podcast' ),
+				'label' => esc_html__( 'Border Radius', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -723,7 +723,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label' => esc_html__( 'Padding', 'obje-podcast' ),
+				'label' => esc_html__( 'Padding', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -735,7 +735,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_responsive_control(
 			'btn_icon_size',
 			[
-				'label' => esc_html__( 'Icon Size', 'obje-podcast' ),
+				'label' => esc_html__( 'Icon Size', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', 'rem' ],
 				'selectors' => [
@@ -753,7 +753,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'style_global_player_section',
 			[
-				'label' => esc_html__( 'Popup Player (Spotify-style)', 'obje-podcast' ),
+				'label' => esc_html__( 'Popup Player (Spotify-style)', 'obje-podcast-player' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -761,7 +761,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'player_bg_color',
 			[
-				'label' => esc_html__( 'Background Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Background Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#ffffff',
 				'selectors' => [
@@ -773,7 +773,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'player_text_color',
 			[
-				'label' => esc_html__( 'Text Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Text Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#1e293b',
 				'selectors' => [
@@ -785,7 +785,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$this->add_control(
 			'player_muted_text_color',
 			[
-				'label' => esc_html__( 'Muted Text Color', 'obje-podcast' ),
+				'label' => esc_html__( 'Muted Text Color', 'obje-podcast-player' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#64748b',
 				'selectors' => [
@@ -798,7 +798,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'player_title_typography',
-				'label' => esc_html__( 'Title Typography', 'obje-podcast' ),
+				'label' => esc_html__( 'Title Typography', 'obje-podcast-player' ),
 				'selector' => 'body .obje-global-player.active-widget-{{ID}} .obje-player-title',
 			]
 		);
@@ -807,7 +807,7 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Typography::get_type(),
 			[
 				'name' => 'player_meta_typography',
-				'label' => esc_html__( 'Meta Typography (Time & Author)', 'obje-podcast' ),
+				'label' => esc_html__( 'Meta Typography (Time & Author)', 'obje-podcast-player' ),
 				'selector' => 'body .obje-global-player.active-widget-{{ID}} .obje-player-time, body .obje-global-player.active-widget-{{ID}} .obje-player-author',
 			]
 		);
@@ -830,6 +830,166 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 		$data_audio = esc_url( $audio_url );
 		$brand_color = isset( $settings['brand_color'] ) && !empty( $settings['brand_color'] ) ? esc_attr( $settings['brand_color'] ) : '#fb7b63';
 		
+		// SVG Whitelist for wp_kses output escaping
+		$allowed_svg = array(
+			'svg' => array(
+				'class'              => true,
+				'viewbox'            => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'stroke-linecap'     => true,
+				'stroke-linejoin'    => true,
+				'width'              => true,
+				'height'             => true,
+				'style'              => true,
+				'aria-hidden'        => true,
+				'id'                 => true,
+				'xmlns'              => true,
+			),
+			'g' => array(
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'id'                 => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'circle' => array(
+				'cx'                 => true,
+				'cy'                 => true,
+				'r'                  => true,
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'path' => array(
+				'd'                  => true,
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'stroke-linecap'     => true,
+				'stroke-linejoin'    => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'polygon' => array(
+				'points'             => true,
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'polyline' => array(
+				'points'             => true,
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'line' => array(
+				'x1'                 => true,
+				'y1'                 => true,
+				'x2'                 => true,
+				'y2'                 => true,
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'stroke-linecap'     => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'rect' => array(
+				'x'                  => true,
+				'y'                  => true,
+				'width'              => true,
+				'height'             => true,
+				'rx'                 => true,
+				'ry'                 => true,
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'ellipse' => array(
+				'cx'                 => true,
+				'cy'                 => true,
+				'rx'                 => true,
+				'ry'                 => true,
+				'class'              => true,
+				'fill'               => true,
+				'stroke'             => true,
+				'stroke-width'       => true,
+				'style'              => true,
+				'transform'          => true,
+			),
+			'defs' => array(
+				'id'                 => true,
+				'class'              => true,
+			),
+			'linearGradient' => array(
+				'id'                 => true,
+				'x1'                 => true,
+				'y1'                 => true,
+				'x2'                 => true,
+				'y2'                 => true,
+				'gradientUnits'      => true,
+			),
+			'radialGradient' => array(
+				'id'                 => true,
+				'cx'                 => true,
+				'cy'                 => true,
+				'r'                  => true,
+				'fx'                 => true,
+				'fy'                 => true,
+				'gradientUnits'      => true,
+			),
+			'stop' => array(
+				'offset'             => true,
+				'stop-color'         => true,
+				'stop-opacity'       => true,
+				'style'              => true,
+			),
+			'use' => array(
+				'href'               => true,
+				'xlink:href'         => true,
+				'x'                  => true,
+				'y'                  => true,
+			),
+			'i' => array(
+				'class'              => true,
+				'aria-hidden'        => true,
+				'style'              => true,
+				'id'                 => true,
+			),
+			'span' => array(
+				'class'              => true,
+				'style'              => true,
+				'id'                 => true,
+			),
+			'img' => array(
+				'src'                => true,
+				'alt'                => true,
+				'class'              => true,
+				'width'              => true,
+				'height'             => true,
+				'style'              => true,
+				'id'                 => true,
+			),
+		);
+
 		// Left Icon
 		ob_start();
 		if ( isset( $settings['left_icon'] ) ) {
@@ -885,14 +1045,14 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 			<?php if ( $type === 'audio' ) : ?>
 			<!-- Hidden Icon Storage for JS transfer -->
 			<div style="display:none;" class="obje-hidden-icons">
-				<div class="obje-icon-play"><?php echo $play_icon_html; ?></div>
-				<div class="obje-icon-pause"><?php echo $pause_icon_html; ?></div>
+				<div class="obje-icon-play"><?php echo wp_kses( $play_icon_html, $allowed_svg ); ?></div>
+				<div class="obje-icon-pause"><?php echo wp_kses( $pause_icon_html, $allowed_svg ); ?></div>
 			</div>
 			<?php endif; ?>
 
 			<div class="obje-podcast-card obje-type-<?php echo esc_attr($type); ?>">
 				<div class="obje-icon-wrap">
-					<?php echo $left_icon_html; ?>
+					<?php echo wp_kses( $left_icon_html, $allowed_svg ); ?>
 				</div>
 
 				<div class="obje-podcast-content">
@@ -920,18 +1080,18 @@ class OBJE_Podcast_Widget extends \Elementor\Widget_Base {
 				<?php endif; ?>
 
 				<?php if ( $type === 'audio' ) : ?>
-					<button class="obje-podcast-play-btn group" type="button" aria-label="<?php esc_attr_e('Play Podcast', 'obje-podcast'); ?>">
+					<button class="obje-podcast-play-btn group" type="button" aria-label="<?php esc_attr_e('Play Podcast', 'obje-podcast-player'); ?>">
 						<span class="obje-active-icon-container">
-							<?php echo $play_icon_html; ?>
+							<?php echo wp_kses( $play_icon_html, $allowed_svg ); ?>
 						</span>
 					</button>
 				<?php else : 
-					$target = ( isset($settings['external_link']['is_external']) && $settings['external_link']['is_external'] ) ? ' target="_blank"' : '';
-					$nofollow = ( isset($settings['external_link']['nofollow']) && $settings['external_link']['nofollow'] ) ? ' rel="nofollow"' : '';
 					$link_url = !empty( $settings['external_link']['url'] ) ? esc_url( $settings['external_link']['url'] ) : '#';
 					$btn_text = isset($settings['listen_btn_text']) ? $settings['listen_btn_text'] : 'Listen now';
+					$is_external = ! empty( $settings['external_link']['is_external'] );
+					$is_nofollow = ! empty( $settings['external_link']['nofollow'] );
 				?>
-					<a href="<?php echo $link_url; ?>" class="obje-podcast-listen-btn" <?php echo $target . $nofollow; ?>>
+					<a href="<?php echo esc_url( $link_url ); ?>" class="obje-podcast-listen-btn"<?php echo $is_external ? ' target="_blank"' : ''; ?><?php echo $is_nofollow ? ' rel="nofollow"' : ''; ?>>
 						<?php echo esc_html( $btn_text ); ?>
 						<svg class="obje-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
 							<path d="M7 17L17 7" />

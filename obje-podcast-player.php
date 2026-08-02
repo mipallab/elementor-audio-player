@@ -2,15 +2,17 @@
 /**
  * Plugin Name: OBJE Podcast Player
  * Description: A modern, high-fidelity Elementor podcast widget with a sticky global Spotify-style audio player. Supports Elementor Free.
- * Version:     1.6.9
+ * Version:     1.7.3
  * Requires at least: 5.8
- * Tested up to: 6.6
+ * Tested up to: 7.0
  * Requires PHP: 7.4
  * Requires Plugins: elementor
  * Elementor tested up to: 3.25
  * Author:      Majadul Islam
- * Author URI:  hhttps://profiles.wordpress.org/mipallab123/
- * Text Domain: obje-podcast
+ * Author URI:  https://profiles.wordpress.org/mipallab123/
+ * Text Domain: obje-podcast-player
+ * License:     GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if (!defined('ABSPATH')) {
@@ -25,7 +27,7 @@ final class OBJE_Podcast_Player {
 	/**
 	 * Plugin Version
 	 */
-	const VERSION = '1.6.9';
+	const VERSION = '1.7.3';
 
 	/**
 	 * Minimum Elementor Version
@@ -96,16 +98,18 @@ final class OBJE_Podcast_Player {
 	 * Warning when the site doesn't have Elementor installed or activated.
 	 */
 	public function admin_notice_missing_main_plugin() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			return;
+		}
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'obje-podcast' ),
-			'<strong>' . esc_html__( 'OBJE Podcast Player', 'obje-podcast' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'obje-podcast' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'obje-podcast-player' ),
+			'<strong>' . esc_html__( 'OBJE Podcast Player', 'obje-podcast-player' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'obje-podcast-player' ) . '</strong>'
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 	}
 
 	/**
@@ -113,17 +117,19 @@ final class OBJE_Podcast_Player {
 	 * Warning when the site doesn't have a minimum required Elementor version.
 	 */
 	public function admin_notice_minimum_elementor_version() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			return;
+		}
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'obje-podcast' ),
-			'<strong>' . esc_html__( 'OBJE Podcast Player', 'obje-podcast' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'obje-podcast' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'obje-podcast-player' ),
+			'<strong>' . esc_html__( 'OBJE Podcast Player', 'obje-podcast-player' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'obje-podcast-player' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 	}
 
 	/**
@@ -131,17 +137,19 @@ final class OBJE_Podcast_Player {
 	 * Warning when the site doesn't have a minimum required PHP version.
 	 */
 	public function admin_notice_minimum_php_version() {
-		if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			return;
+		}
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'obje-podcast' ),
-			'<strong>' . esc_html__( 'OBJE Podcast Player', 'obje-podcast' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'obje-podcast' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'obje-podcast-player' ),
+			'<strong>' . esc_html__( 'OBJE Podcast Player', 'obje-podcast-player' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'obje-podcast-player' ) . '</strong>',
 			 self::MINIMUM_PHP_VERSION
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 	}
 
 	/**
@@ -158,9 +166,6 @@ final class OBJE_Podcast_Player {
 	public function enqueue_scripts() {
 		wp_enqueue_style( 'obje-podcast-style', plugins_url( '/assets/css/podcast-player.css', __FILE__ ), [], self::VERSION );
 		wp_enqueue_script( 'obje-podcast-script', plugins_url( '/assets/js/podcast-player.js', __FILE__ ), ['jquery'], self::VERSION, true );
-        
-        wp_enqueue_style( 'material-symbols-outlined', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1', [], self::VERSION );
-        
 	}
 
     /**

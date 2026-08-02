@@ -1,13 +1,13 @@
 # OBJE Podcast Player
 
-Contributors: Majadul Islam Pallab 
-Tags: podcast, audio, player, elementor, elementor widget, spotify, sticky player  
+Contributors: Majadul Islam Pallab
+Tags: podcast, audio, player, elementor, spotify  
 Requires at least: 5.8  
-Tested up to: 6.6  
+Tested up to: 7.0  
 Requires PHP: 7.4  
 Requires Plugins: elementor  
 Elementor tested up to: 3.25  
-Stable tag: 1.6.9  
+Stable tag: 1.7.2  
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -74,10 +74,25 @@ No. The sticky global player is only available for the **Audio Player** type. Ex
 **How do I style the global player per widget?**  
 The global player accepts Elementor dynamic classes (`active-widget-{{ID}}`), so you can customize its colors and typography from the widget’s **Popup Player (Spotify-style)** style panel.
 
-**Is it compatible with WordPress 6.6 and Elementor 3.25?**  
-Yes. The plugin is tested up to WordPress 6.6 and Elementor 3.25.
+**Is it compatible with WordPress 7.0 and Elementor 3.25?**  
+Yes. The plugin is tested up to WordPress 7.0 and Elementor 3.25.
 
 ## Changelog
+
+### 1.7.3
+- Fix translation text domains to match the obje-podcast-player slug
+- Expand SVG output escaping whitelist for Elementor custom icons
+
+### 1.7.2
+- Fix translation text domains to match the audio-player-for-elementor slug
+- Sanitize dynamic links and messages to resolve output escaping violations
+- Apply unique prefixes to global variables in uninstall.php
+- Trim readme.txt tags to comply with directory limits
+
+### 1.7.0
+- Replace Material Symbols font icons with inline SVGs for player controls
+- Improve translation support and secure output escaping
+- Minor CSS and JS optimizations
 
 ### 1.6.9
 - Initial public release
@@ -89,6 +104,15 @@ Yes. The plugin is tested up to WordPress 6.6 and Elementor 3.25.
 - Full style panels: Card, Typography, Icons, Badge, Button, Global Player
 
 ## Upgrade Notice
+
+### 1.7.3
+Upgrade to 1.7.3 for translation domain alignment and enhanced SVG custom icon compatibility.
+
+### 1.7.2
+Upgrade to 1.7.2 for compliance fixes, text-domain alignment, and security escaping.
+
+### 1.7.0
+Upgrade to 1.7.0 for inline SVG player controls, better localization support, and minor optimizations.
 
 ### 1.6.9
 First stable release of OBJE Podcast Player.
