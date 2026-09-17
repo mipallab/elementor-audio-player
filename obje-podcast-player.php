@@ -4,7 +4,7 @@
  * Description: A modern, high-fidelity Elementor podcast widget with a sticky global Spotify-style audio player. Supports Elementor Free.
  * Version:     1.7.3
  * Requires at least: 5.8
- * Tested up to: 7.0
+ * Tested up to: 7.1
  * Requires PHP: 7.4
  * Requires Plugins: elementor
  * Elementor tested up to: 3.25

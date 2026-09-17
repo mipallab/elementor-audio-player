@@ -1,13 +1,13 @@
 # OBJE Podcast Player
 
-Contributors: Majadul Islam Pallab
+Contributors: mipallab123
 Tags: podcast, audio, player, elementor, spotify  
 Requires at least: 5.8  
-Tested up to: 7.0  
+Tested up to: 7.1  
 Requires PHP: 7.4  
 Requires Plugins: elementor  
 Elementor tested up to: 3.25  
-Stable tag: 1.7.2  
+Stable tag: 1.7.3  
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -74,8 +74,8 @@ No. The sticky global player is only available for the **Audio Player** type. Ex
 **How do I style the global player per widget?**  
 The global player accepts Elementor dynamic classes (`active-widget-{{ID}}`), so you can customize its colors and typography from the widget’s **Popup Player (Spotify-style)** style panel.
 
-**Is it compatible with WordPress 7.0 and Elementor 3.25?**  
-Yes. The plugin is tested up to WordPress 7.0 and Elementor 3.25.
+**Is it compatible with WordPress 7.1 and Elementor 3.25?**  
+Yes. The plugin is tested up to WordPress 7.1 and Elementor 3.25.
 
 ## Changelog
 
